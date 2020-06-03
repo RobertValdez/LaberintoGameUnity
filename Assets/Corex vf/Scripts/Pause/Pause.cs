@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    CameraClearFlags ClearFlags;
+    //public static Pause pauseInstance;
+  /*   public Canvas canvasMenuPausa;
     public Camera camara;
 
     int oldMask;
+
+private void Awake() {
+    pauseInstance = this;
+}
+    private void Start() {
+        canvasMenuPausa.enabled = false;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (Time.timeScale == 1)
             {
+                MostrarMenu(true);
                 oldMask = camara.cullingMask;
                 Time.timeScale = 0;
 
@@ -22,11 +31,20 @@ public class Pause : MonoBehaviour
             }
             else
             {
-                Time.timeScale = 1;
-                
-                camara.clearFlags = CameraClearFlags.Skybox;
-                camara.cullingMask = oldMask;
+                QuitarPausa();
             }
         }
     }
+
+    public void QuitarPausa(){
+        MostrarMenu(false);
+        Time.timeScale = 1;
+
+        camara.clearFlags = CameraClearFlags.Skybox;
+        camara.cullingMask = oldMask;
+    }
+
+    void MostrarMenu(bool statePause){
+        canvasMenuPausa.enabled = statePause;
+    } */
 }
