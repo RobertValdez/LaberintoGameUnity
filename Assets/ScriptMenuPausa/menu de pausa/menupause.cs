@@ -5,40 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class menupause : MonoBehaviour
 {
-    public GameObject menu;
-    public static bool juegopausado;
-
-
-    void Update()
+    public void OnClicContinuar()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (juegopausado == true)
-            {
-                quitarpausa();
-            }
-            else 
-            {
-                pausa();
-            }
-        }
-
+        
     }
-   
-    void pausa()
+    public void OnClicReiniciar()
     {
-        menu.SetActive(true);
-        Time.timeScale = 0;
-        juegopausado = true;
 
-    }
-    void quitarpausa()
-    {
-        menu.SetActive(false);
-        Time.timeScale = 1;
-        juegopausado = false;
     }
     
+    public void OnClicRegresarMenuInicio()
+    {
 
-}   
+    }
 
+}

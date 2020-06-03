@@ -8,6 +8,13 @@ public class MenuOpciones : MonoBehaviour
 {
     
     public void Salir() {
-        Application.Quit();
+        Application.Quit ();
+		#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+		#endif
+    }
+
+    public void Carga() {
+        SceneManager.LoadScene("Level1");
     }
 }
