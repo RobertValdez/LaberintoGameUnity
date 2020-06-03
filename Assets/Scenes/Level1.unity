@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 420932478}
   - component: {fileID: 420932477}
   m_Layer: 0
-  m_Name: Mosaico1 (1)
+  m_Name: Mosaico2
   m_TagString: Pregunta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1084,7 +1084,7 @@ GameObject:
   - component: {fileID: 707319649}
   - component: {fileID: 707319648}
   m_Layer: 0
-  m_Name: Mosaico1 (1)
+  m_Name: Mosaico2
   m_TagString: Pregunta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 951911016}
   - component: {fileID: 951911015}
   m_Layer: 0
-  m_Name: Mosaico1 (3)
+  m_Name: Mosaico4
   m_TagString: Pregunta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1943,7 +1943,7 @@ GameObject:
   - component: {fileID: 1218132686}
   - component: {fileID: 1218132685}
   m_Layer: 0
-  m_Name: Mosaico1 (2)
+  m_Name: Mosaico3
   m_TagString: Pregunta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2255,7 +2255,7 @@ GameObject:
   - component: {fileID: 1248750303}
   - component: {fileID: 1248750302}
   m_Layer: 0
-  m_Name: Mosaico1 (2)
+  m_Name: Mosaico3
   m_TagString: Pregunta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2526,7 +2526,7 @@ GameObject:
   - component: {fileID: 1379342676}
   - component: {fileID: 1379342675}
   m_Layer: 0
-  m_Name: Mosaico1 (5)
+  m_Name: Mosaico6
   m_TagString: Pregunta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2717,7 +2717,7 @@ GameObject:
   - component: {fileID: 1469216813}
   - component: {fileID: 1469216812}
   m_Layer: 0
-  m_Name: Mosaico1 (4)
+  m_Name: Mosaico5
   m_TagString: Pregunta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3278,7 +3278,7 @@ GameObject:
   - component: {fileID: 1707016410}
   - component: {fileID: 1707016409}
   m_Layer: 0
-  m_Name: Mosaico1 (3)
+  m_Name: Mosaico4
   m_TagString: Pregunta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3462,7 +3462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1755384597}
   m_Layer: 0
-  m_Name: Cubos Correctores de Transparencia
+  m_Name: Paredes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4105,6 +4105,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 1 Laberinto
       objectReference: {fileID: 0}
+    - target: {fileID: 4829570350440374648, guid: b19e88bb22b93e142888ddf299ac9cd1,
+        type: 3}
+      propertyPath: m_Name
+      value: Mosaico1
+      objectReference: {fileID: 0}
     - target: {fileID: 4829570350730054037, guid: b19e88bb22b93e142888ddf299ac9cd1,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -4124,6 +4129,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 169264365576851049, guid: 5ff6c4376b73fef4daf1a715cf2a1f41,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1035330991427806211, guid: 5ff6c4376b73fef4daf1a715cf2a1f41,
         type: 3}
       propertyPath: m_Convex
@@ -4208,6 +4218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0473
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084982270917132551, guid: 5ff6c4376b73fef4daf1a715cf2a1f41,
+        type: 3}
+      propertyPath: m_Name
+      value: Pared
       objectReference: {fileID: 0}
     - target: {fileID: 8752667775226788435, guid: 5ff6c4376b73fef4daf1a715cf2a1f41,
         type: 3}
