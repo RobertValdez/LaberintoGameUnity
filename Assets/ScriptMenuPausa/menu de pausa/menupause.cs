@@ -8,16 +8,16 @@ public class menupause : MonoBehaviour
 
     public void OnClicContinuar()
     {
-        GameManager.sharedInstance_gm.QuitarPausa();
+       GameManagerPlaying.sharedInstance.QuitarPausa();
     }
     public void OnClicReiniciar()
     {
-        SceneManager.LoadScene("Level1");
+       GameManager.sharedInstance_gm.ReiniciarLevel1();
     }
 
     public void OnClicRegresarMenuInicio()
     {
-
+        GameManager.sharedInstance_gm.RegresarMenuInicio();
     }
 
 }

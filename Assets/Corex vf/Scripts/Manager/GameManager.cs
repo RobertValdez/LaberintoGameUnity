@@ -1,17 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+public enum Level
+{
+    Menu,
+    Level1
+}
+
+public enum GameState
+{
+    menu,
+    inPlay
+}
 
 public class GameManager : MonoBehaviour
 {
+    public GameState currentGameState = GameState.menu;
+    public Level currentLevel = Level.Menu;
     public static GameManager sharedInstance_gm;
 
-    Canvas canvasMenuPausa;
-    Camera camara;
-
-    int oldMask;
-
-    void Start()
+    private void Awake()
     {
         if (sharedInstance_gm == null)
         {
@@ -22,57 +33,39 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        buscarObjetos();
     }
 
-    void buscarObjetos()
+    void restoreScale(){
+        Time.timeScale = 1; //Investigar razon de porque se reinicia en 0 el timeScale
+    }
+
+    public void StartGame()
     {
-        GameObject canvas = GameObject.Find("Menu de pausa");
-        if (canvas != null)
+        SetGameState(GameState.inPlay);
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void ReiniciarLevel1(){
+        SceneManager.LoadScene("Level1");
+        restoreScale();
+    }
+
+    public void RegresarMenuInicio(){
+        SetGameState(GameState.menu);
+        SceneManager.LoadScene("Menu");
+        restoreScale();
+    }
+
+    public void SetGameState(GameState newGameState)
+    {
+        if (newGameState == GameState.menu)
         {
-            canvasMenuPausa = canvas.GetComponent<Canvas>();
-            Debug.Log(canvasMenuPausa.name);
-            QuitarPausa();
+            //No está relacionado con nada, pero es apropiado que exista
         }
-
-        GameObject cam = GameObject.Find("Camera");
-        if (cam != null)
+        else if (newGameState == GameState.inPlay)
         {
-            camara = cam.GetComponent<Camera>();
+            
         }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (Time.timeScale == 1)
-            {
-                MostrarMenu(true);
-                oldMask = camara.cullingMask;
-                Time.timeScale = 0;
-
-                camara.clearFlags = CameraClearFlags.Nothing;
-                camara.cullingMask = 0;
-            }
-            else
-            {
-                QuitarPausa();
-            }
-        }
-    }
-
-    public void QuitarPausa()
-    {
-        MostrarMenu(false);
-        Time.timeScale = 1;
-
-        camara.clearFlags = CameraClearFlags.Skybox;
-        camara.cullingMask = oldMask;
-    }
-
-    void MostrarMenu(bool statePause)
-    {
-        canvasMenuPausa.enabled = statePause;
+        this.currentGameState = newGameState;
     }
 }
