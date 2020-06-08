@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class EntradaANivel2 : MonoBehaviour
 {
-    public GameObject ObjetoaTransportar;
-    public Vector3 TeleportPos;
+    Vector3 TeleportPos;
     public GameObject ObjetoDestino;
+    public CharacterController Personaje;
 
+    void Awake()
+    {
+        Personaje = GameObject.Find("Personaje").GetComponent<CharacterController>();
+    }
     void Start()
     {
-        TeleportPos = ObjetoDestino.transform.position; 
+        TeleportPos = new Vector3(101.533f, 11.742f, -27.12f);
+        // TeleportPos = ObjetoDestino.transform.position; 
     }
 
-    public void OnTriggerEnter()
+    public void OnTriggerEnter(Collider col)
     {
-        ObjetoaTransportar.transform.position = TeleportPos;
+        Personaje.enabled = false;
+        col.transform.position = TeleportPos;
+        Personaje.enabled = true;
     }
-    
-    
+
+
 
 }

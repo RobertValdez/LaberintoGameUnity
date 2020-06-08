@@ -12,7 +12,7 @@ public class GameMenuPreguntas : MonoBehaviour
     Text PreguntaTitulo, PreguntaTxt, Resultado, Boton1Text, Boton2Text, Boton3Text;
     Button Boton1, Boton2, Boton3;
 
-    Image Boton1img, Boton2img, Boton3img, ResultadoImg;
+    Image Boton1img, Boton2img, Boton3img, ResultadoImg, pnlSalir;
     void Awake()
     {
         if (sharedInstance == null)
@@ -46,6 +46,8 @@ public class GameMenuPreguntas : MonoBehaviour
         Boton1img = GameObject.Find("Boton 1").GetComponent<Image>();
         Boton2img = GameObject.Find("Boton 2").GetComponent<Image>();
         Boton3img = GameObject.Find("Boton 3").GetComponent<Image>();
+
+        pnlSalir = GameObject.Find("pnlSalir").GetComponent<Image>();
     }
 
     void Update()
@@ -137,59 +139,60 @@ public class GameMenuPreguntas : MonoBehaviour
         else
         {
             gameObject.GetComponent<Canvas>().enabled = false;
+            pnlSalir.enabled = false;
         }
     }
 
     int vRespuestaCorrecta = 0;
     int PreguntaActual = 0;
-    public void ManagerRespuestas(int botonClic, string nameBoton)
-    {                               //////////////////
+    public void ManagerRespuestas(int botonClic)
+    {                          
         switch (PreguntaActual)
         {
             case 1:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 2:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 3:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 4:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 5:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 6:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 7:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 8:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 9:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 10:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 11:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 12:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 13:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 14:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
             case 15:
-                Respuesta(botonClic, nameBoton);
+                Respuesta(botonClic);
                 break;
 
             default:
@@ -382,11 +385,12 @@ public class GameMenuPreguntas : MonoBehaviour
     public int countRespuestasCorrectas;
     bool secondViewCanvasPregunta = false;
     float secondCanvasPregunta = 0;
-    private void Respuesta(int botonClic, string nameBoton)
+    private void Respuesta(int botonClic)
     {
         PreguntaTitulo.enabled = false;
         PreguntaTxt.enabled = false;
         Resultado.enabled = true;
+        pnlSalir.enabled = true;
 
         switch (botonClic)
         {

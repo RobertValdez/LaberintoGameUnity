@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class MenuOpciones : MonoBehaviour
 {
-    
-    public void Salir() {
-        Application.Quit ();
-		#if UNITY_EDITOR
-		UnityEditor.EditorApplication.isPlaying = false;
-		#endif
+    public GameObject Obj;
+    void Start()
+    {
+        Obj.gameObject.SetActive(false);
     }
 
-    public void Carga() {
+    public void Salir()
+    {
+        Application.Quit();
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+    }
+
+    public void Carga()
+    {
         GameManager.sharedInstance_gm.StartGame();
     }
+
+    public void Onclick()
+    {
+        Obj.gameObject.SetActive(true);
+    }
+
+    public void Atras()
+    {
+        Obj.gameObject.SetActive(false);
+    }
+
 }
