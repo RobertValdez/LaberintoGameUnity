@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pregunta
   - PauseMenu
+  - Music
   layers:
   - Default
   - TransparentFX

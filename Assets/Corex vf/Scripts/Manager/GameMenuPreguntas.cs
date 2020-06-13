@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -263,123 +263,123 @@ public class GameMenuPreguntas : MonoBehaviour
     }
     private void Pregunta_6()
     {
-        PreguntaTxt.text = "";
+        PreguntaTxt.text = "Componente de una computadora que une todos sus componentes intercambiando la información entre ellos:";
 
-        Boton1Text.text = "";
-        Boton2Text.text = "";
-        Boton3Text.text = ""; //Correcta
+        Boton1Text.text = "A) CPU";
+        Boton2Text.text = "B) Disco Duro";
+        Boton3Text.text = "C) Motherboard"; //Correcta = 3
 
-        vRespuestaCorrecta = 0;
-        PreguntaActual = 0;
-        // MostrarCanvasPregunta(true);
+        vRespuestaCorrecta = 3;
+        PreguntaActual = 6;
+        MostrarCanvasPregunta(true);
     }
     private void Pregunta_7()
     {
-        PreguntaTxt.text = "";
+        PreguntaTxt.text = "¿Cuál es la principal diferencia entre RAM y ROM?";
 
-        Boton1Text.text = "";
-        Boton2Text.text = "";
-        Boton3Text.text = ""; //Correcta
+        Boton1Text.text = "A) La ROM permite escritura de la información y la RAM no";
+        Boton2Text.text = "B) La ROM está pensada para el almacenamiento permanente, y la RAM es para almacenamiento temporal"; //Correcta = 2
+        Boton3Text.text = "C) La ROM está pensada para el almacenamiento temporal, y la RAM es para almacenamiento permanente"; 
 
-        vRespuestaCorrecta = 0;
-        PreguntaActual = 0;
-        // MostrarCanvasPregunta(true);
+        vRespuestaCorrecta = 2;
+        PreguntaActual = 7;
+        MostrarCanvasPregunta(true);
     }
     private void Pregunta_8()
     {
-        PreguntaTxt.text = "";
+        PreguntaTxt.text = "Componente de un sistema en el que es guardado el “caché”:";
 
-        Boton1Text.text = "";
-        Boton2Text.text = "";
-        Boton3Text.text = ""; //Correcta
+        Boton1Text.text = "A) CPU";
+        Boton2Text.text = "B) RAM";//Correcta = 2
+        Boton3Text.text = "C) Disco Duro"; 
 
-        vRespuestaCorrecta = 0;
-        PreguntaActual = 0;
-        //   MostrarCanvasPregunta(true);
+        vRespuestaCorrecta = 2;
+        PreguntaActual = 8;
+        MostrarCanvasPregunta(true);
     }
     private void Pregunta_9()
     {
-        PreguntaTxt.text = "";
+        PreguntaTxt.text = "¿Qué es el BIOS?";
 
-        Boton1Text.text = "";
-        Boton2Text.text = "";
-        Boton3Text.text = ""; //Correcta
+        Boton1Text.text = "A) Es un software que reside en un chip instalado en la motherboard, revisa que no haya ningún problema de funcionamiento en los componentes";//Correcta = 1
+        Boton2Text.text = "B) Es un software que se instala con el CPU, revisa que no haya ningún problema de funcionamiento en los componentes";
+        Boton3Text.text = "C) Es un software que reside en un chip instalado en la motherboard, es una interfaz de configuración de administrador";
 
-        vRespuestaCorrecta = 0;
-        PreguntaActual = 0;
-        // MostrarCanvasPregunta(true);
+        vRespuestaCorrecta = 1;
+        PreguntaActual = 9;
+        MostrarCanvasPregunta(true);
     }
     private void Pregunta_10()
     {
-        PreguntaTxt.text = "";
+        PreguntaTxt.text = "Principal diferencia entre RAM y NVRAM:";
 
-        Boton1Text.text = "";
-        Boton2Text.text = "";
-        Boton3Text.text = ""; //Correcta
+        Boton1Text.text = "A) La NVRAM es capaz de sobrescribir información que recibe y la RAM sólo la lee";
+        Boton2Text.text = "B) La NVRAM carga la configuración básica de funcionamiento del dispositivo y la RAM no";
+        Boton3Text.text = "C) La NVRAM es capaz de almacenar información y no perderla al retirar la alimentación eléctrica, y la RAM es utilizada por un procesador para recibir instrucciones y guardar los resultados"; //Correcta = 3
 
-        vRespuestaCorrecta = 0;
-        PreguntaActual = 0;
-        //  MostrarCanvasPregunta(true);
+        vRespuestaCorrecta = 3;
+        PreguntaActual = 10;
+        MostrarCanvasPregunta(true);
     }
     private void Pregunta_11()
     {
-        PreguntaTxt.text = "";
+        PreguntaTxt.text = "Para que es una partición de disco";
 
-        Boton1Text.text = "";
-        Boton2Text.text = "";
-        Boton3Text.text = ""; //Correcta
+        Boton1Text.text = "A) Para dividir un disco duro físico en varias partes"; //Correcta = 1
+        Boton2Text.text = "B) Para borrar archivos";
+        Boton3Text.text = "C) Instalar una aplicación"; 
 
-        vRespuestaCorrecta = 0;
-        PreguntaActual = 0;
-        //  MostrarCanvasPregunta(true);
+        vRespuestaCorrecta = 1;
+        PreguntaActual = 11;
+        MostrarCanvasPregunta(true);
     }
     private void Pregunta_12()
     {
-        PreguntaTxt.text = "";
+        PreguntaTxt.text = "¿Qué es una clase en programación?";
 
-        Boton1Text.text = "";
-        Boton2Text.text = "";
-        Boton3Text.text = ""; //Correcta
+        Boton1Text.text = "A) Un algoritmo de ejecución";
+        Boton2Text.text = "B) Es un modelo que define un conjunto de variables y métodos apropiados para operar con dichos datos";//Correcta = 2
+        Boton3Text.text = "C) Una subrutina"; 
 
-        vRespuestaCorrecta = 0;
-        PreguntaActual = 0;
-        // MostrarCanvasPregunta(true);
+        vRespuestaCorrecta = 2;
+        PreguntaActual = 12;
+        MostrarCanvasPregunta(true);
     }
     private void Pregunta_13()
     {
-        PreguntaTxt.text = "";
+        PreguntaTxt.text = "¿Qué es un método en programación?";
 
-        Boton1Text.text = "";
-        Boton2Text.text = "";
-        Boton3Text.text = ""; //Correcta
+        Boton1Text.text = "A) Es un modelo que define un conjunto de variables y métodos apropiados para operar con dichos datos";
+        Boton2Text.text = "B) Es un bloque de código que contiene una serie de instrucciones que pueden ser ejecutadas por un programa";//Correcta = 2
+        Boton3Text.text = "C) Conjunto de datos"; 
 
-        vRespuestaCorrecta = 0;
-        PreguntaActual = 0;
-        //  MostrarCanvasPregunta(true);
+        vRespuestaCorrecta = 2;
+        PreguntaActual = 13;
+        MostrarCanvasPregunta(true);
     }
     private void Pregunta_14()
     {
-        PreguntaTxt.text = "";
+        PreguntaTxt.text = "¿Cuál de estos sirve para declarar una variable con punto decimal?";
 
-        Boton1Text.text = "";
-        Boton2Text.text = "";
-        Boton3Text.text = ""; //Correcta
+        Boton1Text.text = "A) int";
+        Boton2Text.text = "B) char";
+        Boton3Text.text = "C) double"; //Correcta = 3
 
-        vRespuestaCorrecta = 0;
-        PreguntaActual = 0;
-        //  MostrarCanvasPregunta(true);
+        vRespuestaCorrecta = 3;
+        PreguntaActual = 14;
+        MostrarCanvasPregunta(true);
     }
     private void Pregunta_15()
     {
-        PreguntaTxt.text = "";
+        PreguntaTxt.text = "¿Cuál de las siguientes direcciones IP pertenece a una clase B?";
 
-        Boton1Text.text = "";
-        Boton2Text.text = "";
-        Boton3Text.text = ""; //Correcta
+        Boton1Text.text = "A) 128.1.25.196";//Correcta = 1
+        Boton2Text.text = "B) 98.23.81.1";
+        Boton3Text.text = "C) 223.145.76.2";
 
-        vRespuestaCorrecta = 0;
-        PreguntaActual = 0;
-        //   MostrarCanvasPregunta(true);
+        vRespuestaCorrecta = 1;
+        PreguntaActual = 15;
+        MostrarCanvasPregunta(true);
     }
 
     public int countRespuestasCorrectas;

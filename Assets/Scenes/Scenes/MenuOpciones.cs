@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class MenuOpciones : MonoBehaviour
 {
+
     public GameObject Obj;
+
+    public Canvas OpcionesVolumen;
+    public GameObject MenuInicio;
     void Start()
     {
-        Obj.gameObject.SetActive(false);
+
+        Obj.gameObject.SetActive(false);    
     }
 
     public void Salir()
@@ -32,5 +37,17 @@ public class MenuOpciones : MonoBehaviour
     {
         Obj.gameObject.SetActive(false);
     }
+
+    public void HideOpcionesVolumen(){
+        OpcionesVolumen.GetComponent<Canvas>().enabled = false;
+        MenuInicio.SetActive(true);
+    }
+
+    public void ShowOpcionesVolumen()
+    {
+        OpcionesVolumen.GetComponent<Canvas>().enabled = true;
+        MenuInicio.SetActive(false);
+    }
+
 
 }

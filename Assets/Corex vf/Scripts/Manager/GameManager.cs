@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public Level currentLevel = Level.Menu;
     public static GameManager sharedInstance_gm;
 
+    public string nameUser;
+
+    public float MusicVolSetting = 1f;
     private void Awake()
     {
         if (sharedInstance_gm == null)
@@ -33,25 +36,40 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        GenericsListKey();
     }
 
-    void restoreScale(){
+    GameObject MusicSond;
+    private void Start()
+    {
+        MusicSond = GameObject.Find("GameManagerSond");
+    }
+    void restoreScale()
+    {
         Time.timeScale = 1; //Investigar razon de porque se reinicia en 0 el timeScale
     }
 
     public void StartGame()
     {
-        SetGameState(GameState.inPlay);
-        SceneManager.LoadScene("Level1");
+        if (nameUser != "")
+        {
+            PlayerPrefs.SetFloat("VolumenMenu", MusicVolSetting);
+            PlayerPrefs.SetString("user", nameUser);
+            SetGameState(GameState.inPlay);
+            SceneManager.LoadScene("Level1");
+        }
     }
 
-    public void ReiniciarLevel1(){
+    public void ReiniciarLevel1()
+    {
         SceneManager.LoadScene("Level1");
         restoreScale();
     }
 
-    public void RegresarMenuInicio(){
+    public void RegresarMenuInicio()
+    {
         SetGameState(GameState.menu);
+        Destroy(MusicSond);
         SceneManager.LoadScene("Menu");
         restoreScale();
     }
@@ -64,8 +82,28 @@ public class GameManager : MonoBehaviour
         }
         else if (newGameState == GameState.inPlay)
         {
-            
+
         }
         this.currentGameState = newGameState;
+    }
+    public Dictionary<string, string> dictionaryBD = new Dictionary<string, string>();
+
+    public void GenericsListKey()
+    {
+         //PlayerPrefs.DeleteAll();//////////////////////////////////////
+        for (int i = 0; i < 100; i++)
+        {
+            if (PlayerPrefs.HasKey("" + i))
+            {
+                dictionaryBD.Add("" + i, PlayerPrefs.GetString("" + i));
+            }
+        }
+        PlayerPrefs.SetString("1" ,"Maria");
+        PlayerPrefs.SetString("2", "Octavio");
+        PlayerPrefs.SetString("3", "Perez");
+        PlayerPrefs.SetString("4", "Jose");
+        PlayerPrefs.SetString("5","Marta" );
+        PlayerPrefs.SetString("6", "Felicio");
+
     }
 }

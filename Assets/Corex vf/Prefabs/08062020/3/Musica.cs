@@ -1,42 +1,56 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class Musica : MonoBehaviour
 {
-    public static Musica sharedInstance;
     public bool inicioScene = false;
 
     void Awake()
     {
-        if (sharedInstance == null)
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
+        if (objs.Length > 1)
         {
-            sharedInstance = this;
-            DontDestroyOnLoad(this.gameObject);
-
-            StartAudio();
+            Destroy(gameObject);
         }
-        else
+        DontDestroyOnLoad(this.gameObject);
+        Asignar();
+    }
+    public float volumen = 0.70f;
+    AudioSource m_MyAudioSource;
+    Slider slider;
+
+
+    private void Asignar()
+    {
+        if (slider == null && SceneManager.GetActiveScene().name == "Menu")
         {
-            Destroy(this);
+            slider = GameObject.Find("SliderVolumen0").GetComponent<Slider>();
+            m_MyAudioSource = GetComponent<AudioSource>();
+
+            if (GameManager.sharedInstance_gm.MusicVolSetting != 0)
+            {
+                slider.value = PlayerPrefs.GetFloat("VolumenMenu");
+            }else
+            {
+                slider.value = volumen;
+            }
+
+            slider.onValueChanged.AddListener(delegate { SetVolume(slider.value); });
         }
     }
 
-     AudioSource m_MyAudioSource;
-    void Start()
+    private void Update()
     {
-         
+        Asignar();
+        m_MyAudioSource.volume = volumen;
     }
 
-    public void StopAudio()
-    { 
-           m_MyAudioSource.Stop();           
-    }
-    public void StartAudio()
+    public void SetVolume(float vol)
     {
-        m_MyAudioSource = GetComponent<AudioSource>();
-        m_MyAudioSource.Play();
+        volumen = vol;
+        GameManager.sharedInstance_gm.MusicVolSetting = volumen;
     }
 
-}   
+}
