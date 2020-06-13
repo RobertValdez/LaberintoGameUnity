@@ -5,23 +5,23 @@ using UnityEngine;
 
 public class SaveWin : MonoBehaviour
 {
-    int count = 0;
-    private void OnTriggerEnter(Collider collider) {
+    int countId = 0;
+    private void OnTriggerExit(Collider collider) {
         if (collider.name == "Personaje")
         {
-            foreach (var item in GameManager.sharedInstance_gm.dictionaryBD)
-            {
-               count = System.Convert.ToInt32(item.Key);
-               Debug.Log(item);
-            }
-            count++;
+            countId = GameManager.sharedInstance_gm.countUserWuinId;
+
+            countId++;
             WinSaveUser();
+            Tiempo.sharedInstance.InGame = false;
+
+            Destroy(gameObject);
         }
     }
 
     private void WinSaveUser()
     {
-        PlayerPrefs.SetString("" + count, PlayerPrefs.GetString("user"));
+        PlayerPrefs.SetString("" + countId, PlayerPrefs.GetString("user"));
         GameManager.sharedInstance_gm.GenericsListKey();
     }
 }

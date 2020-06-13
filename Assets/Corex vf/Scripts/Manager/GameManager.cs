@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public static GameManager sharedInstance_gm;
 
     public string nameUser;
-
+    public bool bolNameUser = false;
     public float MusicVolSetting = 1f;
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        if (nameUser != "")
+        if (nameUser != "" && bolNameUser)
         {
             PlayerPrefs.SetFloat("VolumenMenu", MusicVolSetting);
             PlayerPrefs.SetString("user", nameUser);
@@ -86,24 +86,19 @@ public class GameManager : MonoBehaviour
         }
         this.currentGameState = newGameState;
     }
-    public Dictionary<string, string> dictionaryBD = new Dictionary<string, string>();
 
+    public SortedDictionary<string, string> dictionaryBD = new SortedDictionary<string, string>();
+    public int countUserWuinId = 0;
     public void GenericsListKey()
     {
-         //PlayerPrefs.DeleteAll();//////////////////////////////////////
-        for (int i = 0; i < 100; i++)
+        dictionaryBD = new SortedDictionary<string, string>();
+        for (int id = 0; id < 100; id++)
         {
-            if (PlayerPrefs.HasKey("" + i))
+            if (PlayerPrefs.HasKey("" + id))
             {
-                dictionaryBD.Add("" + i, PlayerPrefs.GetString("" + i));
+                dictionaryBD.Add("" + id, PlayerPrefs.GetString("" + id));
+                countUserWuinId = id;
             }
         }
-        PlayerPrefs.SetString("1" ,"Maria");
-        PlayerPrefs.SetString("2", "Octavio");
-        PlayerPrefs.SetString("3", "Perez");
-        PlayerPrefs.SetString("4", "Jose");
-        PlayerPrefs.SetString("5","Marta" );
-        PlayerPrefs.SetString("6", "Felicio");
-
     }
 }

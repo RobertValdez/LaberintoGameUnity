@@ -51,12 +51,7 @@ public class GameMenuPreguntas : MonoBehaviour
     }
 
     void Update()
-    {
-        /* if (Input.GetKeyDown(KeyCode.P))
-        {
-            
-        } */
-
+    { 
         if (secondViewCanvasPregunta)
         {
             secondCanvasPregunta += Time.deltaTime;

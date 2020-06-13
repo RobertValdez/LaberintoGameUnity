@@ -49,5 +49,10 @@ public class MenuOpciones : MonoBehaviour
         MenuInicio.SetActive(false);
     }
 
+    public void BorrarHistorial(){
+        PlayerPrefs.DeleteAll();
+        GameManager.sharedInstance_gm.GenericsListKey();
+        CargarGanadores.sharedInstance.Cargar();
+    }
 
 }
