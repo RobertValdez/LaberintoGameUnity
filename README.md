@@ -6,4 +6,4 @@ básicos relacionados con la Informática.
 El juego termina cuando el jugador encuentra la salida y consigue responder a todas las preguntas
 que va encotrando en cada pasillo del laberinto.
 
-Lo quieres intentar ;)
+¿Te animas a jugarlo? ;)
